@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azril Davia Iskandar - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            background: linear-gradient(180deg, #1C6EA4, #33A1E0);
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+        }
+        
+        /* Navbar */
+        header {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        
+        nav {
+            z-index: 100;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            height: 80px;
+        }
+        
+        .navbar {
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 0.8rem 2%;
+            height: 100%;
+        }
+        
+        .logo a {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #154D71;
+            transition: all 0.3s ease;
+        }
+        
+        .logo a:hover {
+            transform: scale(1.1);
+            color: #ffffff;
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .menu li {
+            margin: 0 1rem;
+        }
+        
+        .menu li a {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .menu li a:hover {
+            color: #154D71;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .navbar_bahasa {
+            display: flex;
+        }
+        
+        .bahasa {
+            display: flex;
+            list-style: none;
+        }
+        
+        .bahasa li {
+            margin: 0 0.5rem;
+        }
+        
+        .bahasa li a {
+            font-size: 1rem;
+            color: #ffffff;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .bahasa li a:hover {
+            color: #154D71;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Main Content */
+        .content {
+            position: absolute;
+            top: 60%;
+            left: 5%;
+            transform: translateY(-50%);
+            z-index: 10;
+            padding-top: 2rem;
+        }
+        
+        .intro {
+            font-size: 2.5rem;
+            color: #ffffff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .name {
+            font-size: 3rem;
+            color: #ffffff;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .Nama {
+            color: #154D71;
+        }
+        
+        .student {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #154D71;
+            background: #ffffff;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn a:hover {
+            background-color: #154D71;
+            color: #ffffff;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        .button {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .button button {
+            color: #154D71;
+            border: 2px solid #ffffff;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 25px;
+            background: #ffffff;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .button button:hover {
+            transform: translateY(-2px);
+            background-color: #154D71;
+            color: #ffffff;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .foto {
+            position: absolute;
+            right: 5%;
+            top: 55%;
+            transform: translateY(-50%);
+        }
+        
+        .foto img {
+            height: 400px;
+            width: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            filter: grayscale(30%);
+            transition: all 0.3s ease;
+        }
+        
+        .foto img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 4rem 5%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-section h2 {
+            font-size: 3rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            height: auto;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .info-card h3 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        /* Skills Section */
+        .skills-section h2 {
+            font-size: 3rem;
+            color: white;
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .skill-item i {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-item h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .menu li {
+                margin: 0.2rem;
+            }
+            
+            .content {
+                position: static;
+                transform: none;
+                padding: 10rem 2rem 2rem 2rem;
+                text-align: center;
+            }
+            
+            .intro {
+                font-size: 2rem;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .student {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+            
+            .foto {
+                position: static;
+                transform: none;
+                text-align: center;
+                margin: 2rem 0;
+            }
+            
+            .foto img {
+                height: 300px;
+                width: 250px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .about-section h2,
+            .skills-section h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .intro {
+                font-size: 1.5rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                justify-content: center;
+            }
+            
+            .button {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .foto img {
+                height: 250px;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#home">Belze</a>
+                </div>
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="navbar_bahasa">
+                    <ul class="bahasa">
+                        <li><a href="#">IDN</a></li>
+                        <li><a href="#">ENG</a></li>
+                        <li><a href="#">JP</a></li>
+                    </ul>
+                </div>
+            </div> 
+        </nav>
+        
+        <div class="content" id="home">
+            <div class="text_content">
+                <div class="intro">Hello I'm</div>
+                <div class="name"><span class="Nama">Azril</span> Davia Iskandar</div>
+                <div class="student">I'm a student at SMKN40 Jakarta studying Software Engineering. Currently learning web development with HTML, CSS, and planning to master JavaScript, PHP, and more.</div>
+            </div>
+            <div class="btn">
+                <a href="https://www.tiktok.com/@fl4nk5273" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://github.com/kazgekay" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/fl4k3rn/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="button">
+                <button onclick="scrollToSection('about')">About Me</button>
+                <button onclick="scrollToSection('skills')">Skills</button>
+            </div>
+        </div>
+        <div class="foto">
+            <img src="https://via.placeholder.com/300x400/4a90e2/ffffff?text=Azril" alt="Azril Davia Iskandar">
+        </div>
+    </header>
+    
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2>About Me</h2>
+            
+            <div class="about-content">
+                <div class="info-card">
+                    <h3><i class="fas fa-user"></i> Personal Info</h3>
+                    <p>I am a student at SMKN40 Jakarta, majoring in Software Engineering. I am currently learning web development with HTML and CSS. In the future, I will be studying JavaScript, PHP, and other programming languages to become a skilled full-stack developer.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <p>
+                        <strong>School:</strong> SMKN40 Jakarta<br>
+                        <strong>Major:</strong> Rekayasa Perangkat Lunak (Software Engineering)<br>
+                        <strong>Focus:</strong> Web Development & Programming<br>
+                        <strong>Current Status:</strong> Active Student
+                    </p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-target"></i> Goals & Aspirations</h3>
+                    <p>
+                        My goal is to become a skilled full-stack web developer. I am passionate about creating user-friendly websites and applications that can solve real-world problems. I plan to master modern web technologies and contribute to projects in the tech industry.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- SKILLS SECTION -->
+            <div class="skills-section" id="skills">
+                <h2>My Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML5</h4>
+                        <p>Creating structured, semantic web content with modern HTML5 standards</p>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <h4>CSS3</h4>
+                        <p>Styling and responsive web design with advanced CSS3 features</p>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <i class="fab fa-js-square"></i>
+                        <h4>JavaScript</h4>
+                        <p>Currently learning interactive web development and DOM manipulation</p>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <i class="fab fa-php"></i>
+                        <h4>PHP</h4>
+                        <p>Planning to learn server-side programming and database integration</p>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Responsive Design</h4>
+                        <p>Mobile-first approach to modern web development</p>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <i class="fab fa-git-alt"></i>
+                        <h4>Version Control</h4>
+                        <p>Using Git and GitHub for project management and collaboration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.2)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
